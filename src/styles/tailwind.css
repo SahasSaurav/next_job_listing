@@ -4,6 +4,6 @@
 
 @layer base{
   body{
-    overflow-x: hidden;
+   @apply overflow-x-hidden bg-cyan-background font-spartan;
   }
 }

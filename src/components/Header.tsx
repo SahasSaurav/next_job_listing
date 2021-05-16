@@ -1,5 +1,3 @@
-import {FC} from 'react';
-
 const headerStyle={
   height:"200px",
   backgroundImage:"url('/assets/images/bg-header-desktop.svg')",
@@ -8,7 +6,7 @@ const headerStyle={
   backgroundPosition:"center"
 }
 
-const Header:FC = () => {
+const Header:React.FC = () => {
   return (
     <header className=" w-screen bg-desaturated-cyan bg-blend-overlay " style={headerStyle}>
     </header>

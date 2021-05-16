@@ -4,7 +4,7 @@ export type contract = "Full Time" | "Part Time" | "Contract";
 export type language = "HTML" | "CSS" | "JavaScript" | "Python" | "Ruby";
 export type tool = "React" | "Sass" | "Ruby" | "RoR" | "Vue" | "Django";
 
-export interface jobType {
+export interface JobType {
   id: number,
   company: String,
   logo: String,
@@ -16,6 +16,13 @@ export interface jobType {
   postedAt: String,
   contract: contract
   location: string,
+  languages: language[],
+  tools: tool[]
+}
+
+export interface FilterTags{
+  role:role,
+  level: level,
   languages: language[],
   tools: tool[]
 }
