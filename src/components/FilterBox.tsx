@@ -1,10 +1,17 @@
 import { Children, useContext } from "react"
 import { JobContext } from "../context/JobContext"
 import FilterButton from "./FilterButton"
+import {FilterTags} from '../types/jobsTypes'
 
+type clearFilter = () => void
+
+interface FilterBoxContext{
+  activeTags:string[],
+  clearFilter:clearFilter,
+}
 
 const FilterBox:React.FC = () => {
-  const {activeTags,clearFilter}=useContext(JobContext)
+  const {activeTags,clearFilter}=useContext<FilterBoxContext>(JobContext)
   return (
     <div className="flex justify-center items-center w-full -mt-14">
       <div className="flex justify-between px-4 py-3 items-center bg-white shadow-lg  max-w-screen-lg w-full rounded-md " >

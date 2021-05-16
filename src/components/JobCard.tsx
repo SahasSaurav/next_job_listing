@@ -6,7 +6,7 @@ import { JobType } from '../types/jobsTypes';
 
 const JobCard:React.FC<{job:JobType}> = ({job}) => {
   const{company,contract,featured,languages,level,location,logo,position,postedAt,role,tools}=job
-  const filterTag=[role,level,...languages,...tools]
+  const filterTag=[role,level,...languages,...tools].sort()
 
   return (
     <div className=" flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white px-6 py-4  rounded-lg shadow-md w-full max-w-screen-lg leading-5 ">
@@ -35,7 +35,7 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
         </div>
         {/* filter button */}
         <div className="flex justify-start items-center flex-wrap">
-         {Children.toArray(filterTag.map((tag)=><Button name={tag} />))}
+         {Children.toArray(filterTag.map((tag)=><Button tagName={tag} />))}
         </div>
       </div>
     </div>

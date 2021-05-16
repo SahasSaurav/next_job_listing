@@ -5,9 +5,15 @@ interface FilterButtonProps{
   tagName:string,
 }
 
+type removeFilterTag=(tagName)=>void
+
+interface FilterbuttonContextType{
+  removeFilterTag:removeFilterTag
+}
+
 const FilterButton:React.FC<FilterButtonProps> = ({tagName}) => {
   
-  const{removeFilterTag}=useContext(JobContext)
+  const{removeFilterTag}=useContext<FilterbuttonContextType>(JobContext)
 
   return (
     <div className="flex  justify-center items-center h-auto">

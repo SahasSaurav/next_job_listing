@@ -19,24 +19,24 @@ const fetchJobs = async ():Promise<JobType[]> => {
 const JobProvider:React.FC<JobProviderProps>=({children})=>{
 
   const {data:jobs,isLoading,isError,error}=useQuery<JobType[]>('jobs',fetchJobs,)
-  const [activeTags,setActiveTags]=useState(null)
+  const [activeTags,setActiveTags]=useState([])
   const [filteredJob,setFilteredJob]=useState<JobType[]>([])
 
-  const addFilterTag=(tagName)=>{
+  const addFilterTag=(tagName:string):void=>{
       setActiveTags(prevActive=>[...prevActive,tagName])
   }
 
-  const removeFilterTag=(tagName)=>{
+  const removeFilterTag=(tagName:string):void=>{
     const currentActive=activeTags.filter(tag=>tag!==tagName)
     setActiveTags([...currentActive])
   }
 
-  const clearFilter=()=>{
+  const clearFilter=():void=>{
     setActiveTags([])
     setFilteredJob([...jobs])
   }
 
-  const filterByTags=()=>{
+  const filterByTags=():void=>{
     if(activeTags.length){
      const filtered=jobs.filter((job)=>{
        return activeTags.every((tag)=>{
