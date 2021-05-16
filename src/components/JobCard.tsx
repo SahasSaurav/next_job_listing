@@ -2,14 +2,37 @@ import { Children } from 'react';
 import Button from './Button';
 import Badge from './Badge'
 import { JobType } from '../types/jobsTypes';
+import { motion } from 'framer-motion';
 
+const jobCardVariant={
+  hidden:{
+    opacity:0,
+    scale:0,
+  },
+  show:{
+    opacity:1,
+    scale:1,
+    transition:{
+      duration:0.4,
+      ease:"easeInOut"
+    }
+  },
+  exit:{
+    opacity:0,
+    scale:0,
+    x:'100vw',
+    transition:{
+      duration:0.2
+    }
+  },
+}
 
 const JobCard:React.FC<{job:JobType}> = ({job}) => {
   const{company,contract,featured,languages,level,location,logo,position,postedAt,role,tools}=job
   const filterTag=[role,level,...languages,...tools].sort()
 
   return (
-    <div className=" flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white px-6 py-4  rounded-lg shadow-md w-full max-w-screen-lg leading-5 ">
+    <motion.div className={` flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white px-6 py-4  rounded-lg shadow-md w-full max-w-screen-lg leading-5 ${featured&& job.new?'border-l-4 border-desaturated-cyan':''}  origin-top-left `} variants={jobCardVariant} initial="hidden" animate="show" exit="exit" >
       {/* images */}
         <img
           src={`/assets/images/${logo}`}
@@ -38,7 +61,7 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
          {Children.toArray(filterTag.map((tag)=><Button tagName={tag} />))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

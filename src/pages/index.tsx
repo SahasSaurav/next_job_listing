@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Children,useContext,} from "react";
+import { AnimatePresence } from "framer-motion";
 
 import Header from '../components/Header'
 import JobCard from '../components/JobCard'
@@ -22,11 +23,15 @@ const Home:React.FC = () => {
       </Head>
       <Header/>
       <main className="container mx-auto p-4   max-w-screen-xl">
-        {activeTags.length>0  && (<FilterBox />)}
+        <AnimatePresence>
+          {activeTags.length>0  && (<FilterBox />)}
+        </AnimatePresence>        
         <div className=" flex flex-col items-center mt-16 mb-6 md:my-5 space-y-16 lg:space-y-6  ">
-        {
-          Children.toArray(jobs.map(job=>(<JobCard job={job} />)))
-        }
+          <AnimatePresence>
+            {
+              Children.toArray(jobs.map(job=>(<JobCard job={job} />)))
+            }
+          </AnimatePresence>
         </div>
     </main>
     </>

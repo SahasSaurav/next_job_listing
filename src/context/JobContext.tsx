@@ -73,8 +73,6 @@ const JobProvider:React.FC<JobProviderProps>=({children})=>{
       filterByTags()
     }
   },[isLoading,activeTags])
-  
-  console.log({filteredJob})
 
   if(isLoading && !filteredJob.length){
     return (
