@@ -2,7 +2,7 @@ import { createContext,useState,useEffect} from "react"
 import { useQuery } from "react-query";
 
 import Loader from '../components/Loader'
-import { FilterTags, JobType } from "../types/jobsTypes";
+import { JobType } from "../types/jobsTypes";
 
 export const JobContext= createContext(null)
 

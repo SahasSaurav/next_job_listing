@@ -1,7 +1,6 @@
 import { Children, useContext } from "react"
 import { JobContext } from "../context/JobContext"
 import FilterButton from "./FilterButton"
-import {FilterTags} from '../types/jobsTypes'
 
 type clearFilter = () => void
 

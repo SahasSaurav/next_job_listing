@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { jobType } from "../../types/jobsTypes"
+import { JobType } from "../../types/jobsTypes"
 import { NextApiRequest,NextApiResponse } from "next"
 
-const jobs:jobType[] = [
+const jobs:JobType[] = [
   {
     "id": 1,
     "company": "Photosnap",
