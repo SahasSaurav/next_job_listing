@@ -23,7 +23,15 @@ const JobProvider:React.FC<JobProviderProps>=({children})=>{
   const [filteredJob,setFilteredJob]=useState<JobType[]>([])
 
   const addFilterTag=(tagName:string):void=>{
-      setActiveTags(prevActive=>[...prevActive,tagName])
+
+    setActiveTags(prevActive=>{
+      //remove replication
+      if(!prevActive.includes(tagName)){
+        return [...prevActive,tagName]
+      }else{
+        return [...prevActive]
+      }
+    })
   }
 
   const removeFilterTag=(tagName:string):void=>{
