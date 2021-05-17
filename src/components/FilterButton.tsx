@@ -20,6 +20,7 @@ const filterButtonVariant={
     scaleX:1,
     opacity:1,
     transition:{  
+      delay:0.25,
       scalex:{
         duration:0.15,
         type:"string",
