@@ -32,7 +32,7 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
   const filterTag=[role,level,...languages,...tools].sort()
 
   return (
-    <motion.div className={` flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white px-6 py-4  rounded-lg shadow-md w-full max-w-screen-lg leading-5 ${featured&& job.new?'border-l-4 border-desaturated-cyan':''}  origin-top-left `} variants={jobCardVariant} initial="hidden" animate="show" exit="exit" >
+    <motion.div className={` flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white px-6 py-8  rounded-lg shadow-md w-full max-w-screen-lg leading-5 ${featured&& job.new?'border-l-4 border-desaturated-cyan':''}  origin-top-left `} variants={jobCardVariant} initial="hidden" animate="show" exit="exit" >
       {/* images */}
         <img
           src={`/assets/images/${logo}`}
@@ -48,13 +48,13 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
             {featured===true ? <Badge name="featured" /> : ""}
           </header>
           <h2 className="text-gray-900 font-bold text-xl">{position}</h2>
-          <main className="flex space-x-3 items-baseline font-sans font-medium  text-dark-gray-cyan ">
+          <article className="flex space-x-3 items-baseline font-sans font-medium  text-dark-gray-cyan ">
             <p className="">{postedAt}</p>
             <p className="font-bold text-xl">.</p>
             <p className="">{contract}</p>
             <p className="font-bold text-xl">.</p>
             <p className="">{location}</p>
-          </main>
+          </article>
         </div>
         {/* filter button */}
         <aside className="flex justify-start items-center flex-wrap">
