@@ -32,7 +32,7 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
   const filterTag=[role,level,...languages,...tools].sort()
 
   return (
-    <motion.div className={`flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white p-6  rounded-lg shadow-md w-full max-w-screen-lg leading-5 ${featured&& job.new?'border-l-4 border-desaturated-cyan':''}  origin-top-left `} variants={jobCardVariant} initial="hidden" animate="show" exit="exit" >
+    <motion.div className={`flex flex-col lg:flex-row lg:justify-start lg:items-center bg-white px-6  py-4 rounded-lg shadow-md w-full max-w-screen-lg leading-5 ${featured&& job.new?'border-l-4 border-desaturated-cyan':''}  origin-top-left `} variants={jobCardVariant} initial="hidden" animate="show" exit="exit" >
       {/* images */}
         <img
           src={`/assets/images/${logo}`}
