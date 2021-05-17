@@ -48,11 +48,11 @@ const FilterBox:React.FC = () => {
   return (
     <motion.div className="flex justify-center items-center w-full -mt-14" variants={fliterBoxVariant} initial="hidden" animate="show" exit="exit">
       <div className="flex justify-between px-4 py-3 items-center bg-white shadow-lg  max-w-screen-lg w-full rounded-md " >
-        <motion.span  className="flex flex-wrap gap-x-2 gap-y-3  w-full h-full mr-4">
+        <motion.div  className="flex flex-wrap gap-x-2 gap-y-3  w-full h-full mr-4">
           <AnimatePresence>
             {Children.toArray(activeTags.map(tag=>(<FilterButton key={tag} tagName={tag} />)))}
           </AnimatePresence>
-        </motion.span>
+        </motion.div>
         <button className="text-desaturated-cyan font-medium text-lg tracking-wide  transform -translate-x-4 border-b-2 border-white hover:border-desaturated-cyan focus:outline-none leading-4 focus:border-desaturated-cyan" onClick={()=>clearFilter()} >Clear</button> 
       </div>
     </motion.div>

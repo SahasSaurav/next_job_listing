@@ -10,9 +10,9 @@ const Badge:React.FC<BadgeProps> = ({name}) => {
       paddingBottom:"1px"
   }
   return (
-    <div className="inline-flex font-sans justify-center items-baseline text-white text-sm uppercase tracking-wider font-medium rounded-full px-2" style={badgeStyles}  >
+    <span className="inline-flex font-sans justify-center items-baseline text-white text-sm uppercase tracking-wider font-medium rounded-full px-2" style={badgeStyles}  >
       {name}
-    </div>
+    </span>
   )
 }
 

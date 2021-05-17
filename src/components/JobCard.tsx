@@ -42,24 +42,24 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
       {/* details */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center flex-wrap w-full " >
         <div className="flex-col space-y-2 border-b-2 py-3 border-gray-300  lg:py-0 lg:border-b-0">
-          <span className="flex items-baseline space-x-3">
+          <header className="flex items-baseline space-x-3">
             <h3 className="text-de-dark-cyan font-bold">{company}</h3>
             {job.new===true ? <Badge name="New!" /> : ""}
             {featured===true ? <Badge name="featured" /> : ""}
-          </span>
+          </header>
           <h2 className="text-gray-900 font-bold text-xl">{position}</h2>
-          <span className="flex space-x-3 items-baseline font-sans font-medium  text-dark-gray-cyan ">
+          <main className="flex space-x-3 items-baseline font-sans font-medium  text-dark-gray-cyan ">
             <p className="">{postedAt}</p>
             <p className="font-bold text-xl">.</p>
             <p className="">{contract}</p>
             <p className="font-bold text-xl">.</p>
             <p className="">{location}</p>
-          </span>
+          </main>
         </div>
         {/* filter button */}
-        <div className="flex justify-start items-center flex-wrap">
+        <aside className="flex justify-start items-center flex-wrap">
          {Children.toArray(filterTag.map((tag)=><Button tagName={tag} />))}
-        </div>
+        </aside>
       </div>
     </motion.div>
   );
