@@ -2,7 +2,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Hydrate } from "react-query/hydration";
 import JobProvider from "../context/JobContext";
 import "../styles/tailwind.css";
-import '../styles/main.css'
 
 const queryClient=new QueryClient();
 
@@ -11,7 +10,7 @@ const MyApp = ({ Component, pageProps }) => {
     <QueryClientProvider client={queryClient}>
       <Hydrate>
         <JobProvider>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
         </JobProvider>
       </Hydrate>
     </QueryClientProvider>
