@@ -8,7 +8,7 @@ const headerStyle={
 
 const Header:React.FC = () => {
   return (
-    <header className=" w-screen bg-desaturated-cyan bg-blend-overlay " style={headerStyle}>
+    <header className=" w-screen bg-desaturated-cyan bg-blend-overlay" style={headerStyle}>
     </header>
   )
 }

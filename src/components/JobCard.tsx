@@ -48,13 +48,13 @@ const JobCard:React.FC<{job:JobType}> = ({job}) => {
             {featured===true ? <Badge name="featured" /> : ""}
           </header>
           <h2 className="text-gray-900 font-bold text-xl">{position}</h2>
-          <article className="flex space-x-3 items-baseline font-sans font-medium  text-dark-gray-cyan ">
+          <div className="flex space-x-3 items-baseline font-sans font-medium  text-dark-gray-cyan ">
             <p className="">{postedAt}</p>
             <p className="font-bold text-xl">.</p>
             <p className="">{contract}</p>
             <p className="font-bold text-xl">.</p>
             <p className="">{location}</p>
-          </article>
+          </div>
         </div>
         {/* filter button */}
         <aside className="flex justify-start items-center flex-wrap">
